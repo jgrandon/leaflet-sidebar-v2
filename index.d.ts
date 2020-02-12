@@ -12,7 +12,7 @@ declare module 'leaflet' {
 
     namespace Control {
 
-        interface SidebarOptions extends Omit<L.ControlOptions, 'position'>{ 
+        interface SidebarOptions extends Pick<L.ControlOptions, Exclude<keyof L.ControlOptions,'position'> >{ 
             container?: HTMLElement | string,
             position?: 'left' | 'right',
             autopan?: boolean,
